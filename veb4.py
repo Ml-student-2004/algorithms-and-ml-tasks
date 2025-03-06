@@ -90,8 +90,58 @@ def groupwords(word):
     
       
 
+ДОМАШНЯЯ РАБОТА :
+
+ВВОД МНОГОСТРОЧНОГО ТЕКСТА :
+
+input_text =  []
+while True:
+    try:
+        line = input()
+        if not line:
+            break
+        input_text.extend(line.split())
+    except: EOFError
+        break
 
 
+a = [1, 2, 3]
+b = [4, 5, 6]
+a.extend(b)
+print(a)  # Вывод: [1, 2, 3, 4, 5, 6]
+        
 
-
+СОЗДАНИЕ ДВУМЕРНОГО СПИСКА:
+def add(name, product,amount):
+    if(name not in family_buying):
+        family_buying[name] = {}
+    if(product not in family_buying[name]):
+        family_buying[name][product] = amount
+    else:
+        family_buying[name][product] += amount
+    
+    
+    
+    
+family_buying = {}
+input_text =  []
+while True:
+    try:
+        line = input()
+        if not line:
+            break
+        input_text.append(line)
+    except EOFError:
+        break
+   
+    
+for line in input_text:
+    name, product, amount  = map(str, line.split())
+    add(name,product,int(amount))
+    
+for i in sorted(family_buying.keys()):
+    print(i+':')
+    for j in sorted(family_buying[i].keys()):
+        print(j, family_buying[i][j])
+АФИГЕТЬ В ПИТОНЕ НАПРЯМУЮ МОЖНО СРАВНИВАТЬ СЛОВАРИ. А Массивы?
 
